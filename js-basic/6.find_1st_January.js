@@ -1,4 +1,6 @@
 /**
+ * @Anik__January_12_2023
+ *
  * @Problem_Name
  *  Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
  *
