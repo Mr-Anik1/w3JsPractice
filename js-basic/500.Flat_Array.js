@@ -18,6 +18,27 @@ console.log(flattenedArr);
 /**
  * @Another_Way
  */
+let boom = [
+  1,
+  2,
+  [3, 4, [5, 6, [7, 8, [9, 10], 11, 12], 13, 14], 15, 16],
+  17,
+  18,
+  19,
+  20,
+];
+
+let flaten = (arr) =>
+  arr.reduce(
+    (acc, cur) => acc.concat(Array.isArray(cur) ? flaten(cur) : cur),
+    []
+  );
+console.log(flaten(boom));
+//[ 1,  2,  3,  4,  5,  6,  7, 8,  9, 10, 11, 12, 13, 14,15,16, 17, 18, 19, 20 ]
+
+/**
+ * @Another_Way
+ */
 const deepFlatten = (arr) =>
   [].concat(...arr.map((v) => (Array.isArray(v) ? deepFlatten(v) : v)));
 
